@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 14</title>
+    <style>
+        .d{
+            background-color: antiquewhite;
+            border: 1px solid transparent;
+            margin: -10px;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .ma{
+            border-radius: 5px;
+            background-color: rgb(54, 52, 52);
+            padding: 2px;
+            width: 215px;
+            height: 290px;
+            display: grid;
+            border: 1px solid;
+            gap: 7px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+        .matc{
+            border-radius: 5px;
+
+            height: 100%;
+            width: 97%;
+        }
+        .item1{
+            grid-column: 1/5;
+        }
+        .item2{
+           
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="d">
+        <h1>Calculator</h1>
+        <form action="" id="f1" onsubmit="evaluation(event)">
+        <div class="ma">
+            <div class="item1"><input class="matc" type="text" id="i1" ></div>
+            <div class="item2"><input class="matc" type="button" value="%" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="^" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="/" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="C" onclick="input1(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="1" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="2" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="3" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="*" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="4" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="5" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="6" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="-" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="7" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="8" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="9" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="+" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="." onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="0" onclick="input(event)"></div>
+            <div class="item2"><input class="matc" type="button" value="00" onclick="input(event)"></div>
+            <div class="item3"><input class="matc" type="submit" value="="></div>
+        </div>
+    </form>
+    </div>
+    
+        
+        
+        
+        
+        
+    </form>
+    
+    <script>
+        let p1 = document.getElementById("p1");
+        let f1 = document.getElementById("f1");
+        let d = document.getElementById("i1")
+
+        function input(event){
+            d.value+=event.target.value;
+        }
+
+        function input1(event){
+            event.preventDefault();
+            d.value=" "
+        }
+
+        function evaluation(event){
+            event.preventDefault();
+            let res = eval(d.value);
+            d.value=res;
+            p1.innerHTML=res;
+        }
+    </script>
+    
+</body>
+</html>
